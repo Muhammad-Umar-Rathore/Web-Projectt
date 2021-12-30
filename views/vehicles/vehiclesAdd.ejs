@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Add a New Car</h1>
+  <form action="/student/add" method="POST">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Car Name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="Brand">Brand</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brand"
+        name="brand"
+        placeholder="Car Brand"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Quantity</label>
+      <input
+        type="number"
+        class="form-control"
+        id="quantity"
+        name="quantity"
+        placeholder="Car Brand"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Image</label>
+      <input type="file" name="myImage" accept="image/png, image/gif, image/jpeg" />
+    </div>
+    <input type="submit" name="submit" value="Add" class="btn btn-success" />
+  </form>
+</div>
