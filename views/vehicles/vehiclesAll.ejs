@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>
+            <b>Cars </b>List
+            <a href="/vehicles/add" class="">
+              <i class="fas fa-plus-circle" style="color:green"></i>
+            </a>
+          </h2>
+        </div>
+        <div class="col-sm-4">
+          <div class="search-box">
+            <i class="material-icons">&#xE8B6;</i>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search&hellip;"
+            />
+          </div>
+        </div>
+      </div>
+      <br><br>
+    
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Name </th>
+          <th>Brand</th>
+          <th>Quantity</th>
+          <th>view</th>
+          <!-- <th>Actions</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <% if(typeof Vs != 'undefined'){ %> <%
+        Vs.forEach(function(V) { %>
+        <tr>
+          <td><%= V.name%></td>
+          <td><%= V.brand%></td>
+          <td><%= V.quantity%></td>
+          <td><a href="/vehicles/view">ad.f</a></td>
+        </tr>
+        <% }); %> <% } %>
+      </tbody>
+    </table>
+    <div class="clearfix">
+      <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a href="#"><i class="fa fa-angle-double-left"></i></a>
+        </li>
+        <li class="page-item"><a href="#" class="page-link">1</a></li>
+        <li class="page-item"><a href="#" class="page-link">2</a></li>
+        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+        <li class="page-item"><a href="#" class="page-link">4</a></li>
+        <li class="page-item"><a href="#" class="page-link">5</a></li>
+        <li class="page-item">
+          <a href="#" class="page-link"
+            ><i class="fa fa-angle-double-right"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

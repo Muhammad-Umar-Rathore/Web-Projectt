@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="/css/chkout.css">
+                <div class="invoice overflow-auto">
+                    <div style="min-width: 600px">
+                        <header>
+                            <div class="row">
+                                <div class="col company-details">
+                                    <h2 class="name">
+                                        <a target="_blank" href="javascript:;">
+									Checkout 
+									</a>
+                                    </h2>
+                                    <div>455 Foggy Heights, AZ 85004, US</div>
+                                    <div>(123) 456-789</div>
+                                    <div>company@example.com</div>
+                                </div>
+                            </div>
+                        </header>
+                        <main>
+                            <div class="row contacts">
+                                <div class="col invoice-to">
+                                    <div class="text-gray-light">INVOICE TO:</div>
+                                    <h2 class="to"><%=U.name%></h2>
+                                    <div class="email"><%=U.email%></div>
+                                </div>
+                                <div class="col invoice-details">
+                                    <h1 class="invoice-id ">INVOICE</h1>
+                                  
+                                </div>
+                            </div>
+                            <table class="center">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th class="text-center">DETAILS</th>
+                                        
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody class="center">
+                                    <tr>
+                                      
+                                        <td class="text-left">
+                                            <h3>
+                                                <a target="_blank" href="javascript:;">
+										<%=Vs.name%>
+										</a>
+                                            </h3>
+                                          </td>
+                                        
+                                   
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td class="text-left">
+                                            <h3>Website Design</h3>Creating a recognizable design solution based on the cozmpany's existing visual identity</td>
+                                        
+                                       
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td class="text-left">
+                                            <h3>Website Development</h3>Developing a Content Management System-based Website</td>
+                                       
+                                  
+                                    </tr>
+                                    <tr>
+                                        
+                                        <td class="text-left">
+                                            <h3>Search Engines Optimization</h3>Optimize the site for search engines (SEO)</td>
+                                   
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                   
+                                    <tr>
+                                        
+                                        <td><form action="/confirm" method="POST">
+                                            <input  style="visibility: hidden; position: relative;" value='{"id":<%=Vs.id%>,"quantity":<%=Vs.quantity%>}' name="Vs">
+                                            <input  style="visibility: hidden; position: relative;" value="<%=U.email%>" name="email">
+                                            <button type="submit" class="btn">Confirm</button>
+                                        </form></td>
+                                        <td colspan="2"></td>
+                                        <td colspan="2">TOTAL PRICE</td>
+                                        <td>$6,500.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                    
+                            <div class="thanks"><br>Thank you!</div>
+                            <div class="notices">
+                                <div>NOTICE:</div>
+                                <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+                            </div>
+                        
+                        </main>
+                        <footer>Invoice was created on a computer and is valid without the signature and seal.</footer>
+                    </div>
+                    <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</center>

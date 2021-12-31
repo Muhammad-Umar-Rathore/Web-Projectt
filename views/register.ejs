@@ -1,0 +1,56 @@
+<style>
+  body {
+      background-image: url('/images/car2.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+  }
+</style>
+<style>
+  .center {
+      text-align: center;
+  }
+</style>
+<style>
+  .label {
+    width: 240px;
+    display: inline-block;
+  }
+</style>
+<div class="center">
+  <h1 style="color:indianred;">Register</h1>
+
+</div>
+      <% include ./partials/messages %>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto mt-5 p-4" style="box-shadow: 0px 0px 12px black" >
+                <center><form action="/register" method="POST">
+                    <div>
+                        <label style="color:indianred;font-size: larger;font-weight:bolder" , for="name">Name</label>
+                        <input  type="name" name="name" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name : '' %>" />
+
+                    </div>
+                    <div>
+                        <label style="color:indianred;font-size: larger;font-weight:bolder" ,for="email">Email</label>
+                        <input type="email" name="email" placeholder="Enter Email" value="<%= typeof email != 'undefined' ? email : '' %>" />
+                    </div>
+                    <div>
+                        <label style="color:indianred;font-size: larger;font-weight:bolder" ,for="password">Password</label>
+                        <input type="password" name="password" placeholder="Create Password" value="<%= typeof password != 'undefined' ? password : '' %>" />
+                    </div>
+                    <div>
+                        <label style="color:indianred;font-size: larger;font-weight:bolder;" ,for="password2">Confirm Password</label>
+                        <input type="password" name="password2" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+      Register
+    </button>
+                </form>
+              </center>
+            </div>
+        </div>
+    </div>
+
+    <center><p>Have An Account? <a href="/">Login</a></p></center>
