@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const passport=require("passport")
-
+const bcryptt = require("bcryptjs");
 const User=require("../models/User");
 const V=require("../models/vehicles");
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
+const bcrypt = require("bcryptjs/dist/bcrypt");
 
 // Welcome Page
 router.get("/", forwardAuthenticated, (req, res) =>
@@ -31,6 +32,7 @@ router.get('/register', (req, res) =>
           layout: "lay/out"
         })
 });
+
 var s;
 router.get('/review/:email', (req, res) =>
             {
@@ -102,12 +104,35 @@ router.post('/register', (req, res) => {
       });
   }});
 
-  router.post('/login', (req, res, next) => {
-    passport.authenticate("local", {
+
+  router.get('/vehicles/add', (req, res) => {
+    res.render("../views/vehicles/vehiclesAdd" , {
+      layout: "lay/main"
+    })
+  });
+
+  router.post('/login', async(req, res, next) => {
+    const pass = req.body.password;
+    const umail = req.body.email;
+
+    const checkMail = await User.findOne({email: umail});
+
+    if( bcryptt.compare(pass , checkMail.password) && (checkMail.role == "customer")){
+      passport.authenticate("local", {
         successRedirect: "/true",
         failureRedirect: "/",
         failureFlash: true
     })(req, res, next);
+    }else if(bcryptt.compare(pass , checkMail.password) && (checkMail.role == "admin")){
+      res.render("../views/vehicles/vehiclesAdd" , {
+        layout: "lay/main"
+      })
+    }else{
+      res.status(401).send("Incorrect password and email ")
+    }
+
+
+   
 });
 router.get('/review',ensureAuthenticated, (req, res) =>{
   console.log("sss");

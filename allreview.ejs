@@ -1,15 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FRIDAY CHATBOT</title>
+    <style>
+        #chatLog{text-align: center;}
+        h2 {text-align: center;}
 
+        body{
+          background: linear-gradient(  rgb(83, 95, 104), rgb(26, 24, 24));
+          background-repeat: no-repeat;
+          color: white;
+          height: 35rem;
+        }
+        .header{
+            background-color: rgb(66, 70, 80);
+            color: white;
+            text-transform: capitalize;
+        }
+        h6{
+          margin-top: 20px;
+          margin-left: 270px;
+        }
+        #feedback
+        {
+          margin-top: 20px;
+          margin-left: 270px;
+        }
+      
 
+    </style>
+    <header class="header">
 
-        
+        <div id="menu-btn" class="fas fa-bars"></div>
+    
+        <a href="#" class="logo"> <span>max</span>wheels </a>
+    
+        <nav class="navbar">
+            <a href="#">home</a>
+            <a href="#">vehicles</a>
+            <a href="#">services</a>
+            <a href="#">featured</a>
+            <a href="#">reviews</a>
+            <a href="#">contact</a>
+        </nav>
+       
+    </header> 
+ 
+</head>
+<body>
+ 
+
         <% include ./views/partials/messages %>
-        <%=u[0].rev%>
         <% if(typeof u != 'undefined'){ %> <%
             u.forEach(function(u1) { %>
             <tr>
                 <%if(u1.rev!=' '){%>
-                <p><%=u1.name%></p>
-                <p><%=u1.rev%></p>
+                <p>Customer Name: <%=u1.name%></p>
+                <p>Review: <%=u1.rev%></p>
                 <%}%>
             </tr>
             <% }); %> <% } %>
+
+  
+</body>
+</html>

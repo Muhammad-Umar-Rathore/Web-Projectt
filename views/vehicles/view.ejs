@@ -1,14 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+   background-color: #e7cbc5;
+  }
+  .container{
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+            height: max-content;
+            width: 700px;
+  
+  }
+  img{
+    width: 400px;
+    height: 100px;
+  }
+    button{
+    border: none;
+   
+    padding: 0.8rem 1.8rem;
+    font-size: 1.3rem;
+    margin-left: 40px;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px #000;
+    outline: none;
+ }
 
+        .header{
+            background-color: rgb(197, 169, 169);
+        }
+</style>
+<header class="header">
 
+  <div id="menu-btn" class="fas fa-bars"></div>
 
-        
+  <a href="/true" class="logo"> <span>max</span>wheels </a>
+
+  <nav class="navbar">
+      <a href="/true">home</a>
+      <a href="#vehicles">vehicles</a>
+      <a href="#services">services</a>
+      <a href="#featured">featured</a>
+      <a href="#reviews">reviews</a>
+      <a href="#contact">contact</a>
+  </nav>
+ 
+</header> 
+<body>
+<div class="container">
+    
+    <div class="row">
+      <div class="col">
         <% include ../partials/messages %>
-        <% if(typeof Vs != 'undefined'){ %> <%
-            Vs.forEach(function(V) { %>
-            <tr>
+    <% if(typeof Vs != 'undefined'){ %> <%
+        Vs.forEach(function(V) { %>
+        <tr>
+            
+            <img src="/uploads/<%=V.myimage%>" style="height: 220px; width: 400px;">
+            <a href='/vehicles/checkout/{"vid":"<%=V.id%>","user":"<%=user%>"}'>
+                <button >check out</button></a>
                 <p><%=V.name%></p>
                 <p><%=V.brand%></p>
-                <img src="/uploads/<%=V.myimage%>" style="height: 200px; width: 200px;">
-                <a href='/vehicles/checkout/{"vid":"<%=V.id%>","user":"<%=user%>"}'><button >check out</button></a>
-            </tr>
-            <% }); %> <% } %>
+            
+        </tr>
+        <% }); %> <% } %>
+      </div>
+     
+ 
+    </div>
+  </div>    
+</body>
+</html>

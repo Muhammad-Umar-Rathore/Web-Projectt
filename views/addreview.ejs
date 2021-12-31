@@ -1,45 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FRIDAY CHATBOT</title>
+    <style>
+        #chatLog{text-align: center;}
+        h2 {text-align: center;}
 
-<script src="https://use.fontawesome.com/a6f0361695.js"></script>
+        body{
+          background: linear-gradient(  rgb(178, 197, 214), black);
+          background-repeat: no-repeat;
+          color: white;
+          height: 35rem;
+        }
+        .header{
+            background-color: rgb(66, 70, 80);
+            color: white;
+            text-transform: capitalize;
+        }
+        h6{
+          margin-top: 20px;
+          margin-left: 270px;
+        }
+        #feedback
+        {
+          margin-top: 20px;
+          margin-left: 270px;
+        }
 
-<h2 id="fh2">WE APPRECIATE YOUR REVIEW!</h2>
-<h6 id="fh6">Your review will help us to improve our web hosting quality products, and customer services.</h6>
+    </style>
+    <header class="header">
 
-
-<form id="feedback" action="/review" method="POST">
+        <div id="menu-btn" class="fas fa-bars"></div>
+    
+        <a href="/true" class="logo"> <span>max</span>wheels </a>
+    
+        <nav class="navbar">
+            <a href="/true">home</a>
+            <a href="/true">vehicles</a>
+            <a href="/true">services</a>
+            <a href="/true">featured</a>
+            <a href="/true">reviews</a>
+            <a href="/true">contact</a>
+        </nav>
+       
+    </header> 
  
-  <% include ../views/partials/messages %>
- <div class="pinfo">Rate our overall services.</div>
+</head>
+<body>
+  <h2 id="fh2">WE APPRECIATE YOUR REVIEW!</h2>
+  <h6 id="fh6">Your review will help us to improve our web hosting quality products, and customer services.</h6>
   
-
-<div class="form-group">
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-heart"></i></span>
-   <select class="form-control" id="rate">
-      <option value="1star">1</option>
-      <option value="2stars">2</option>
-      <option value="3stars">3</option>
-      <option value="4stars">4</option>
-      <option value="5stars">5</option>
-    </select>
+  
+  <form id="feedback" action="/review" method="POST">
+   
+    <% include ../views/partials/messages %>
+   <div class="pinfo">Rate our overall services.</div>
+    
+  
+  <div class="form-group">
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+     <select class="form-control" id="rate">
+        <option value="1star">1</option>
+        <option value="2stars">2</option>
+        <option value="3stars">3</option>
+        <option value="4stars">4</option>
+        <option value="5stars">5</option>
+      </select>
+      </div>
     </div>
   </div>
-</div>
-
- <div class="pinfo">Write your feedback.</div>
   
-
-<div class="form-group">
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-  <textarea class="form-control" id="review" name="review" rows="3"></textarea>
- 
+   <div class="pinfo">Write your feedback.</div>
+    
+  
+  <div class="form-group">
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+    <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+   
+      </div>
     </div>
   </div>
-</div>
-
- <button type="submit" class="btn btn-primary">Submit</button>
-
-
-</form>
+  
+   <button type="submit" class="btn btn-primary">Submit</button>
+  
+  
+  </form>
+</body>
+</html>
